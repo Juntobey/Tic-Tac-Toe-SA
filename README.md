@@ -1,38 +1,24 @@
 # Tic-Tac-Toe-SA
-Building a SA style tic-tac-toe with JavaScript 
-Our first task is to install Node.js, a runtime environment that lets us run JavaScript code from the terminal rather than the browser.
+1. Setting up the Environment
 
-You can install it from the Node.js website, or check if you already have it installed with the node -v command. If not, you can type npm install prompt-sync in the terminal to install the package after downloading from the Node.js website. To execute your program, run node <filename> in the terminal and press enter.
+Node.js: This is essential for running JavaScript outside a web browser. Install it from the official website (https://nodejs.org/).
+prompt-sync: This package allows the game to get input from the user in the terminal. Install it using npm (Node Package Manager) with the command npm install prompt-sync.
+2. Basic Game Structure
 
-node tictactoe.js
+gameBoard: An array representing the tic-tac-toe grid. It starts with 9 empty spaces (' ') to signify an empty board.
+currentPlayer: A variable to keep track of whose turn it is. It's initialized to '🐐' (a goat emoji) as player 1, giving it a South African flavour.
+gameActive: A boolean (true or false) that indicates whether the game is still in progress. It's set to true at the start.
+3. South African Twist
 
-In this example, tictactoe.js is the file name you saved your code in.
+The README suggests using "goats and grapes" (🐐 and 🍇) instead of the traditional Xs and Os, adding a unique South African touch to the game.
 
-We must import the 'prompt-sync' package to handle user input. This can be done with the following code:
+4. Next Steps
 
-const prompt = require('prompt-sync')();
+The README implies that the next steps would involve:
 
-Next, we need to set up the game variables such as the game board, player names, and state of the game.
-
-Below where we imported prompt-sync, let's define the following variables:
-
-gameBoard
-currentPlayer
-gameActive
-Since the game will be played on the console, we can use blank spaces to represent the gameBoard as an array with 9 positions:
-
-let gameBoard = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
-
-In addition to this, we also need to assign a name for players to track which players turn it is.
-
-While players would typically use Xs and Os to play Tic-Tac-Toe, we will use goats and grapes. Thus, player 1 be ‘🐐’, but you can assign any name to it.
-
-let currentPlayer = '🐐';
-
-You may have noticed that we only assigned one name to a player, despite there being two players in a Tic-Tac-Toe game. Don’t worry – we’ll address this later in the program.
-
-We also need to set up a game state, so the program knows when to stop and finish. When we run the program, we can start with the gameActive variable being set to true. This ensures the game keeps going until there is a win or a draw.
-
-let gameActive = true;
-
-Now that we've initialized our essential variables, it's time to work on the game functionality.
+Displaying the board: A function to visually represent the game board array in the console.
+Getting player input: Using prompt-sync to ask the current player where they want to place their mark (goat or grape).
+Updating the board: Changing the game board array based on player input.
+Checking for a win or draw: Logic to determine if a player has won or if the game is a draw.
+Switching players: Alternating the current player between goat and grape.
+Ending the game: Setting gameActive to false when the game is over.
